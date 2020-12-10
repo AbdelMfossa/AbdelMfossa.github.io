@@ -21,10 +21,11 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
 </head>
-<body>
-	
-	
+<body>	
 	<div class="bg-g1 size1 flex-w flex-col-c-sb p-l-15 p-r-15 p-t-55 p-b-35 respon1">
+		<div class="topleft shadow-sm">
+	    	<h1>Abdel Mfossa</h1>
+		</div>
 		<span></span>
 		<div class="flex-col-c p-t-50 p-b-50">
 			<h3 class="l1-txt1 txt-center p-b-10">
@@ -32,38 +33,40 @@
 			</h3>
 
 			<p class="txt-center l1-txt2 p-b-60">
-				Our website is under construction
+				My website is under construction
 			</p>
 
-			<div class="flex-w flex-c cd100 p-b-82">
+			<hr/>
+
+			<div class="flex-w flex-c cd100 p-b-82"  id="demo">
 				<div class="flex-col-c-m size2 how-countdown">
-					<span class="l1-txt3 p-b-9 days">35</span>
+					<span class="l1-txt3 p-b-9 days" id="days"><!-- 35 --></span>
 					<span class="s1-txt1">Days</span>
 				</div>
 
 				<div class="flex-col-c-m size2 how-countdown">
-					<span class="l1-txt3 p-b-9 hours">17</span>
+					<span class="l1-txt3 p-b-9 hours" id="hours"><!-- 17 --></span>
 					<span class="s1-txt1">Hours</span>
 				</div>
 
 				<div class="flex-col-c-m size2 how-countdown">
-					<span class="l1-txt3 p-b-9 minutes">50</span>
+					<span class="l1-txt3 p-b-9 minutes"  id="minutes"><!-- 50 --></span>
 					<span class="s1-txt1">Minutes</span>
 				</div>
 
 				<div class="flex-col-c-m size2 how-countdown">
-					<span class="l1-txt3 p-b-9 seconds">39</span>
+					<span class="l1-txt3 p-b-9 seconds" id="seconds"><!-- 39 --></span>
 					<span class="s1-txt1">Seconds</span>
 				</div>
 			</div>
 
 			<button class="flex-c-m s1-txt2 size3 how-btn"  data-toggle="modal" data-target="#subscribe">
-				Follow us for update now!
+				Contact me for update now!
 			</button>
 		</div>
 
 		<span class="s1-txt3 txt-center">
-			@ 2017 Coming Soon Template. Designed by Colorlib
+			@ 2020 Abdel Aziz Mfossa. Designed by <a href="https://twitter.com/AbdelMfossa" target="_blank" style="font-weight: bold; color: #fff;">me</a>
 		</span>
 		
 	</div>
@@ -78,14 +81,14 @@
 
 				<div class="wsize1 m-lr-auto">
 					<h3 class="m1-txt1 txt-center p-b-36">
-						<span class="bor1 p-b-6">Subscribe</span>
+						<span class="bor1 p-b-6">Contact</span>
 					</h3>
 
 					<p class="m1-txt2 txt-center p-b-40">
-						Follow us for update now!
+						Contact me for update now!
 					</p>
 
-					<form class="contact100-form validate-form">
+					<!-- <form class="contact100-form validate-form">
 						<div class="wrap-input100 m-b-10 validate-input" data-validate = "Name is required">
 							<input class="s1-txt4 placeholder0 input100" type="text" name="name" placeholder="Name">
 							<span class="focus-input100"></span>
@@ -99,9 +102,12 @@
 						<div class="w-full">
 							<button class="flex-c-m s1-txt2 size5 how-btn1 trans-04">
 								Get Updates
-							</button>
+							</button width="640" height="570">
 						</div>
-					</form>
+					</form> -->
+					<div>
+						<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScDTehqRB0FeBK2ZoCE3Q_puhAd-OfCjhuBlqJjSqDXGv0pVg/viewform?embedded=true" width="500" height="500" frameborder="0" marginheight="0" marginwidth="0">Chargement…</iframe>
+					</div>
 
 					<p class="s1-txt5 txt-center wsize2 m-lr-auto p-t-20">
 						And don’t worry, we hate spam too! You can unsubcribe at anytime.
@@ -112,6 +118,39 @@
 		</div>
 	</div>
 
+	<script>
+		// Set the date we're counting down to
+		var countDownDate = new Date("Dec 31, 2020 15:30:00").getTime();
+
+		// Update the count down every 1 second
+		var countdownfunction = setInterval(function() {
+
+		  // Get todays date and time
+		  var now = new Date().getTime();
+		  
+		  // Find the distance between now an the count down date
+		  var distance = countDownDate - now;
+		  
+		  // Time calculations for days, hours, minutes and seconds
+		  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+		  
+		  // Output the result in an element with id="demo"
+		  // document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+		  document.getElementById("days").innerHTML = days;
+		  document.getElementById("hours").innerHTML = hours;
+		  document.getElementById("minutes").innerHTML = minutes;
+		  document.getElementById("seconds").innerHTML = seconds;
+		  
+		  // If the count down is over, write some text 
+		  if (distance < 0) {
+		    clearInterval(countdownfunction);
+		    document.getElementById("demo").innerHTML = "<span class='l1-txt2 blink_me' style=''>EXPIRED</span>";
+		  }
+		}, 1000);
+	</script>
 	
 
 <!--===============================================================================================-->	
@@ -121,33 +160,6 @@
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
 	<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/countdowntime/moment.min.js"></script>
-	<script src="vendor/countdowntime/moment-timezone.min.js"></script>
-	<script src="vendor/countdowntime/moment-timezone-with-data.min.js"></script>
-	<script src="vendor/countdowntime/countdowntime.js"></script>
-	<script>
-		$('.cd100').countdown100({
-			// Set Endtime here
-			// Endtime must be > current time
-			endtimeYear: 0,
-			endtimeMonth: 0,
-			endtimeDate: 35,
-			endtimeHours: 18,
-			endtimeMinutes: 0,
-			endtimeSeconds: 0,
-			timeZone: "" 
-			// ex:  timeZone: "America/New_York", can be empty
-			// go to " http://momentjs.com/timezone/ " to get timezone
-		});
-	</script>
-<!--===============================================================================================-->
-	<script src="vendor/tilt/tilt.jquery.min.js"></script>
-	<script >
-		$('.js-tilt').tilt({
-			scale: 1.1
-		})
-	</script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
 
