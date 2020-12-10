@@ -31,6 +31,11 @@ Primary use:
   src: url('../fonts/Montserrat/Montserrat-Bold.ttf'); 
 }
 
+@font-face {
+  font-family: Amanda-Signature;
+  src: url('../fonts/Amanda/Amanda-Signature.ttf'); 
+}
+
 
 /*//////////////////////////////////////////////////////////////////
 [ RS PLUGIN ]*/
@@ -362,6 +367,48 @@ input.input100 {
 }
 
 
+.topleft {
+  position: absolute;
+  top: 0;
+  /*left: 16px;*/
+  width: 100%;
+  height: 55px;
+}
+
+.topleft h1{
+  font-family: Amanda-Signature;
+  color: #e6e3e3;
+  font-size: 27px;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-left: 16px;
+}
+
+hr {
+  /*margin: auto;*/
+  width: 55%;
+  margin-top: -4px;
+  background-color: white;
+  margin-bottom: 44px;
+}
+
+.shadow-sm{
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important;
+}
+
+.blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+iframe {
+  margin-left: -72px;
+}
 
 
 
